@@ -2,6 +2,7 @@
 ESP32 to control a PWM fan from Delta Electronics.
 
 This repository includes code and circuit schematics to implement a controller for a Delta Electronics PFC1212DE-F00 (PWM Fan).
+![demo](https://github.com/SimoSera/PWM-Fan-Controller/blob/main/example.jpg)
 
 ## Parts (what i used):
 + Delta Electronics PFC1212DE-F00 ([used from aliexpress](https://it.aliexpress.com/item/1005006893754578.html), might work with differtent fans)
@@ -25,6 +26,14 @@ I am not an electronic engineer, so I was not able to use any advanced electroni
 
 [This](https://www.circuit-diagram.org/circuits/508e6c3034c44ba6a4b0c1beed5d6d67) is the link to the schematics, and the following is a colored version:
 
-![schematic]
+![schematic](https://github.com/SimoSera/PWM-Fan-Controller/blob/main/circuit.png)
+
+## How it works
+The fan is controller from the **PWM signal** sent from the ESP32 to the PWM wire of the fan. The PWM signal is at 25KHz and it uses a resolution of 9 bits so that it matches the precision of the potentiometer.
+
+When the fan is rotating it will generate 2 pulses per rotation on the F00 or FG wire, which is then read by the ESP32 as a digital signal. The resistors have been added to match what is shown in the [fan documentation](https://www.delta-fan.com/Download/Spec/PFC1212DE-F00.pdf).
+
+The OLED display will show a percentage of the PWM duty cycle and the current RPM of the fan. A demo can be seen [here](https://github.com/SimoSera/PWM-Fan-Controller/blob/main/example.jpg).
+This information will also be printed on the Serial monitor, so in case you won't use the display just comment all the display parts.
 
 
