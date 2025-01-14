@@ -11,7 +11,7 @@ This repository includes code and circuit schematics to implement a controller f
 + 2.7 KΩ Resistor (series of two 333 Ω and a 2 KΩ resistors)
 + SSD1306 I2C OLED Display ([128x64 display](https://it.aliexpress.com/item/1005006365875586.html), using a different size one needs modifications to code)
 + PSU 12V  ≥5A ([USB-C 100W PD charger](https://it.aliexpress.com/item/1005005324613468.html) + [PD trigger board](https://it.aliexpress.com/item/1005007403613707.htm))
-+ optional 0.1µF capacitor, used for better precision for the potentiometer (104 ceramic capacitor)
++ optional 0.1µF capacitor, used for better precision on the potentiometer (104 ceramic capacitor)
 
 The code will probably work with different ESP32 boards, you can use different (more practical) potentiometer, the display is not necessary. As I wrote you will need a 12V 5A power source, I used a USB charger with P.D. and a P.D. trigger board that supports 5A and set it to 12V. You will also need another power source to power the ESP32 as it uses 5V and not 12V; you could also try to use a converter to use the same power source.
 
